@@ -23,14 +23,14 @@ def salvar_dados():
 
 def exibir_menu():
     print("Menu:")
-    print("1. Cadastrar Filme")
-    print("2. Ver Filmes")
-    print("3. Buscar por Título")
+    print('\033[32m'"1. Cadastrar Filme"'\033[0;0m')
+    print('\033[34m'"2. Ver Filmes"'\033[0;0m')
+    print('\033[36m'"3. Buscar por Título"'\033[0;0m')
     print("4. Buscar por Gênero")
     print("5. Buscar Por Duração")
     print("6. Buscar Por Nota")
     print("7. Editar Filme")
-    print("8. Remover Filme")
+    print('\033[31m'"8. Remover Filme"'\033[0;0m')
     print("9. Sair")
 
 def buscar_filme_por_titulo(titulo):

@@ -26,12 +26,12 @@ def exibir_menu():
     print('\033[32m'"1. Cadastrar Filme"'\033[0;0m')
     print('\033[34m'"2. Ver Filmes"'\033[0;0m')
     print('\033[36m'"3. Buscar por Título"'\033[0;0m')
-    print("4. Buscar por Gênero")
-    print("5. Buscar Por Duração")
-    print("6. Buscar Por Nota")
+    print('\033[35m'"4. Buscar por Gênero"'\033[0;0m')
+    print('\033[35m'"5. Busca por Estoque / Disponíveis"'\033[0;0m')
+    print('\033[33m'"6. Buscar Por Nota"'\033[0;0m')
     print("7. Editar Filme")
-    print('\033[31m'"8. Remover Filme"'\033[0;0m')
-    print("9. Sair")
+    print('\033[2m'"8. Remover Filme"'\033[0;0m')
+    print('\033[31m'"9. Sair"'\033[0;0m')
 
 def buscar_filme_por_titulo(titulo):
     filmes_encontrados = []
@@ -57,14 +57,14 @@ def editar_filme():
         print("Filme não encontrado.")
 
 def remover_filme():
-    titulo_remover = input("Digite o título do filme a ser removido: ")
+    titulo_remover = input('\033[34m'"Digite o título do filme a ser removido: "'\033[0;0m')
     filme_encontrado = buscar_filme_por_titulo(titulo_remover)
     if filme_encontrado:
         lista_filmes.remove(filme_encontrado[0])
         salvar_dados()
-        print("Filme removido com sucesso.")
+        print('\033[31m'"Filme removido com sucesso."'\033[0;0m')
     else:
-        print("Filme não encontrado.")
+        print('\033[31m'"Filme não encontrado."'\033[0;0m')
 
 carregar_dados()
 exibir_menu()
@@ -73,14 +73,14 @@ while True:
     escolha = input("Escolha uma opção: ")
 
     if escolha == "1":
-        titulo = input("Digite o título do filme: ")
-        genero = input("Digite o gênero do filme: ")
-        duracao = input("Digite a duração do filme (em horas): ")
-        nota = input("Digite a nota do filme: ")
+        titulo = input('\033[34m'"Digite o título do filme: "'\033[0;0m')
+        genero = input('\033[36m'"Digite o gênero do filme: "'\033[0;0m')
+        duracao = input('\033[37m'"Digite a duração do filme (em horas): "'\033[0;0m')
+        nota = input('\033[33m'"Digite a nota do filme: "'\033[0;0m')
         filme = {"Titulo": titulo, "Genero": genero, "Duracao (horas)": duracao, "Nota": nota}
         lista_filmes.append(filme)
         salvar_dados()
-        print("Filme cadastrado com sucesso.")
+        print('\033[32m'"Filme cadastrado com sucesso."'\033[0;0m')
 
     elif escolha == "2":
         for filme in lista_filmes:
@@ -121,7 +121,7 @@ while True:
             for filme in filmes_encontrados:
                 print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao (horas)']}, Nota: {filme['Nota']}")
         else:
-            print("Nenhum filme encontrado.")
+            print('\033[31m'"Nenhum filme encontrado."'\033[0;0m')
 
     elif escolha == "7":
         editar_filme()
@@ -131,8 +131,8 @@ while True:
 
     elif escolha == "9":
         salvar_dados()
-        print("Saindo do programa...")
+        print('\033[31m'"Saindo do programa..."'\033[0;0m')
         break
 
     else:
-        print("Opção inválida. Escolha novamente.")
+        print('\033[31m'"Opção inválida. Escolha novamente."'\033[0;0m')

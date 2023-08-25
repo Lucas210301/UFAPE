@@ -1,25 +1,26 @@
-Titulo,Genero,Duracao (horas),Nota
-O Poderoso Chefão,Drama,02:55:00,9
-Interestelar,Ficção Científica,02:49:00,8
-O Senhor dos Anéis: O Retorno do Rei,Aventura,03:21:00,8
-A Origem,Ficção Científica,02:28:00,8
-Pantera Negra,Ação,02:14:00,7
-A Bela e a Fera,Romance,02:09:00,7
-Toy Story,Animação,01:21:00,8
-O Rei Leão,Animação,01:28:00,8
-Jurassic Park,Aventura,02:07:00,8
-O Pianista,Drama,02:30:00,8
-Pulp Fiction,Drama,02:34:00,8
-Titanic,Romance,03:15:00,7
-Cidade de Deus,Drama,02:10:00,8
-Clube da Luta,Drama,02:19:00,8
-Matrix,Ficção Científica,02:19:00,8
-Avatar,Ficção Científica,02:42:00,7
-Star Wars: Uma Nova Esperança,Aventura,02:01:00,8
-Forrest Gump,Comédia Dramática,02:02:00,8
-Vingadores: Ultimato,Ação,03:01:00,8
-O Silêncio dos Inocentes,Terror,01:58:00,8
-Speed Racer,Corrida,02:30:00,9
-Frozen,Animação,01:45:00,8
-Orgulho e Preconceito,Drama, Romance,02:07:00,9
-Carros,Animação,01:40:00,9
+Titulo,Genero,Duracao (horas),Nota,Estoque
+O Poderoso Chefão,Drama,02:55:00,9,Sim
+Interestelar,Ficção Científica,02:49:00,8,Sim
+O Senhor dos Anéis: O Retorno do Rei,Aventura,03:21:00,8,Sim
+A Origem,Ficção Científica,02:28:00,8,Sim
+Pantera Negra,Ação,02:14:00,7,Sim
+A Bela e a Fera,Romance,02:09:00,7,Sim
+Toy Story,Animação,01:21:00,8,Sim
+O Rei Leão,Animação,01:28:00,8,Sim
+Jurassic Park,Aventura,02:07:00,8,Sim
+O Pianista,Drama,02:30:00,8,Sim
+Pulp Fiction,Drama,02:34:00,8,Sim
+Titanic,Romance,03:15:00,7,Sim
+Cidade de Deus,Drama,02:10:00,8,Sim
+Clube da Luta,Drama,02:19:00,8,Sim
+Matrix,Ficção Científica,02:19:00,8,Sim
+Avatar,Ficção Científica,02:42:00,7,Sim
+Star Wars: Uma Nova Esperança,Aventura,02:01:00,8,Sim
+Forrest Gump,Comédia Dramática,02:02:00,8,Sim
+Vingadores: Ultimato,Ação,03:01:00,8,Sim
+O Silêncio dos Inocentes,Terror,01:58:00,8,Sim
+Speed Racer,Corrida,02:30:00,9,Sim
+Frozen,Animação,01:45:00,8,Sim
+Orgulho e Preconceito,Drama,Romance,02:07:00,Sim
+Carros,Animação,01:40:00,9,Sim
+Batman o Retorno,Ação,Aventura,02:10:00,10,Sim

@@ -1,4 +1,4 @@
-Titulo,Genero,Duracao (horas),Nota,Estoque
+Titulo,Genero,Duracao,Nota,Estoque
 O Poderoso Chefão,Drama,02:55:00,9,Sim
 Interestelar,Ficção Científica,02:49:00,8,Sim
 O Senhor dos Anéis: O Retorno do Rei,Aventura,03:21:00,8,Sim
@@ -23,4 +23,3 @@ Speed Racer,Corrida,02:30:00,9,Sim
 Frozen,Animação,01:45:00,8,Sim
 Orgulho e Preconceito,Drama,Romance,02:07:00,Sim
 Carros,Animação,01:40:00,9,Sim
-Batman o Retorno,Ação,Aventura,02:10:00,10,Sim

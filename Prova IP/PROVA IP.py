@@ -75,24 +75,24 @@ while True:
     if escolha == "1":
         titulo = input('\033[34m'"Digite o título do filme: "'\033[0;0m')
         genero = input('\033[36m'"Digite o gênero do filme: "'\033[0;0m')
-        duracao = input('\033[37m'"Digite a duração do filme (em horas): "'\033[0;0m')
+        duracao = input('\033[37m'"Digite a duração do filme: "'\033[0;0m')
         nota = input('\033[33m'"Digite a nota do filme: "'\033[0;0m')
         estoque = input('\033[35m'"Digite o estoque do filme (Sim/Não): "'\033[0;0m')
-        filme = {"Titulo": titulo, "Genero": genero, "Duracao (horas)": duracao, "Nota": nota, "Estoque": estoque}
+        filme = {"Titulo": titulo, "Genero": genero, "Duracao": duracao, "Nota": nota, "Estoque": estoque}
         lista_filmes.append(filme)
         salvar_dados()
         print('\033[32m'"Filme cadastrado com sucesso."'\033[0;0m')
 
     elif escolha == "2":
         for filme in lista_filmes:
-            print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao (horas)']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}")
+            print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}")
 
     elif escolha == "3":
         titulo_busca = input("Digite o título a ser buscado: ")
         filmes_encontrados = buscar_filme_por_titulo(titulo_busca)
         if filmes_encontrados:
             for filme in filmes_encontrados:
-                print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao (horas)']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}")
+                print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}")
         else:
             print("Nenhum filme encontrado.")
 
@@ -102,7 +102,7 @@ while True:
         filmes_encontrados = [filme for filme in lista_filmes if genero_bus in filme["Genero"].lower()]
         if filmes_encontrados:
             for filme in filmes_encontrados:
-                print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao (horas)']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}")
+                print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}")
         else:
             print("Nenhum filme encontrado.")
 
@@ -119,7 +119,7 @@ while True:
         filmes_encontrados = [filme for filme in lista_filmes if nota_busca == filme["Nota"]]
         if filmes_encontrados:
             for filme in filmes_encontrados:
-                print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao (horas)']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}")
+                print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}")
         else:
             print('\033[31m'"Nenhum filme encontrado."'\033[0;0m')
 

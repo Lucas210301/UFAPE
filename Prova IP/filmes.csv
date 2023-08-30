@@ -1,26 +1,26 @@
-Titulo,Genero,Duracao,Nota,Estoque
-O Poderoso Chefão,Drama,02:55:00,9,Sim
-Interestelar,Ficção Científica,02:49:00,8,Sim
-O Senhor dos Anéis: O Retorno do Rei,Aventura,03:21:00,8,Sim
-A Origem,Ficção Científica,02:28:00,8,Sim
-Pantera Negra,Ação,02:14:00,7,Sim
-A Bela e a Fera,Romance,02:09:00,7,Sim
-Toy Story,Animação,01:21:00,8,Sim
-O Rei Leão,Animação,01:28:00,8,Sim
-Jurassic Park,Aventura,02:07:00,8,Sim
-O Pianista,Drama,02:30:00,8,Sim
-Pulp Fiction,Drama,02:34:00,8,Sim
-Titanic,Romance,03:15:00,7,Sim
-Cidade de Deus,Drama,02:10:00,8,Sim
-Clube da Luta,Drama,02:19:00,8,Sim
-Matrix,Ficção Científica,02:19:00,8,Sim
-Avatar,Ficção Científica,02:42:00,7,Sim
-Star Wars: Uma Nova Esperança,Aventura,02:01:00,8,Sim
-Forrest Gump,Comédia Dramática,02:02:00,8,Sim
-Vingadores: Ultimato,Ação,03:01:00,8,Sim
-O Silêncio dos Inocentes,Terror,01:58:00,8,Sim
-Speed Racer,Corrida,02:30:00,9,Sim
-Frozen,Animação,01:45:00,8,Sim
-Orgulho e Preconceito,Drama,Romance,02:07:00,Sim
-Carros,Animação,01:40:00,9,Sim
-Batman o Retorno,Ação,Aventura,Drama,02:10:00
+Titulo,Genero,Duracao,Nota,Estoque,Preco
+O Poderoso Chefão,Drama,02:55:00,9,Sim,11
+Interestelar,Ficção Científica,02:49:00,8,Sim,10
+O Senhor dos Anéis: O Retorno do Rei,Aventura,03:21:00,8,Sim,13
+A Origem,Ficção Científica,02:28:00,8,Sim,9
+Pantera Negra,Ação,02:14:00,7,Sim,8
+A Bela e a Fera,Romance,02:09:00,7,Sim,7
+Toy Story,Animação,01:21:00,8,Sim,6
+O Rei Leão,Animação,01:28:00,8,Sim,6
+Jurassic Park,Aventura,02:07:00,8,Sim,8
+O Pianista,Drama,02:30:00,8,Sim,9
+Pulp Fiction,Drama,02:34:00,8,Sim,10
+Titanic,Romance,03:15:00,7,Sim,7
+Cidade de Deus,Drama,02:10:00,8,Sim,8
+Clube da Luta,Drama,02:19:00,8,Sim,10
+Matrix,Ficção Científica,02:19:00,8,Sim,9
+Avatar,Ficção Científica,02:42:00,7,Sim,8
+Star Wars: Uma Nova Esperança,Aventura,02:01:00,8,Sim,7
+Forrest Gump,Comédia Dramática,02:02:00,8,Sim,9
+Vingadores: Ultimato,Ação,03:01:00,8,Sim,10
+O Silêncio dos Inocentes,Terror,01:58:00,8,Sim,8
+Speed Racer,Corrida,02:30:00,9,Sim,11
+Frozen,Animação,01:45:00,8,Sim,7
+Carros,Animação,01:40:00,9,Sim,9
+Matrix Reloaded,Ação,02:18:00,7,Sim,18
+Matrix Revolutions,Ação,Ficção Científica,02:20:00,6,Sim,8

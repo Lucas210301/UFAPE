@@ -45,16 +45,20 @@ def editar_filme():
     titulo_editar = input("Digite o título do filme a ser editado: ")
     filme_encontrado = buscar_filme_por_titulo(titulo_editar)
     if filme_encontrado:
+        novo_titulo = input("Digite o novo título do filme: ")
         genero = input("Digite o novo gênero do filme: ")
         duracao = input("Digite a nova duração do filme (em horas): ")
         nota = input("Digite a nova nota do filme: ")
         estoque = input("Digite o novo estoque do filme (Sim/Não): ")
         preco = input("Digite o novo preço do filme: ")
+
+        filme_encontrado[0]["Titulo"] = novo_titulo
         filme_encontrado[0]["Genero"] = genero
         filme_encontrado[0]["Duracao"] = duracao
         filme_encontrado[0]["Nota"] = nota
         filme_encontrado[0]["Estoque"] = estoque
         filme_encontrado[0]["Preco"] = preco
+
         salvar_dados()
         print("Filme editado com sucesso.")
     else:
@@ -104,7 +108,7 @@ while True:
         filmes_encontrados = buscar_filme_por_titulo(titulo_busca)
         if filmes_encontrados:
             for filme in filmes_encontrados:
-                print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}")
+                print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}, Preco: {filme['Preco']}")
         else:
             print("Nenhum filme encontrado.")
 
@@ -114,7 +118,7 @@ while True:
         filmes_encontrados = [filme for filme in lista_filmes if genero_bus in filme["Genero"].lower()]
         if filmes_encontrados:
             for filme in filmes_encontrados:
-                print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}")
+                print(f"Título: {filme['Titulo']}, Gênero: {filme['Genero']}, Duração: {filme['Duracao']}, Nota: {filme['Nota']}, Estoque: {filme['Estoque']}, Preco:['Preco']")
         else:
             print("Nenhum filme encontrado.")
 

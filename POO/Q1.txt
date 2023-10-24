@@ -1,0 +1,7 @@
+﻿O que acontece quando é usado um número com mais de cinco dígitos?
+Se usarmos um número com mais de cinco dígitos, o programa não detectará isso na verificação if e executará a separação de dígitos normalmente. 
+Entretanto, a saída pode ser confusa, pois o programa separará todos os dígitos presentes no número, independentemente de serem mais de cinco dígitos.
+
+O que acontece quando é usado um número com menos de cinco dígitos?
+Se usarmos um número com menos de cinco dígitos, o programa também não detectará isso na verificação if, mas a separação de dígitos funcionará para os dígitos presentes no número. 
+Entretanto, os dígitos ausentes serão representados como zeros na saída. Por exemplo, se inserirmos "123" (com três dígitos), a saída será "1 2 3 0 0".

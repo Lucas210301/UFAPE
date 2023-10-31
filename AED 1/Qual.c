@@ -3,9 +3,6 @@
 #include <math.h>
 #include <stdlib.h>
 
-//3221 - Qual o numero de d�gitos de um numero inteiro?
-//https://thehuxley.com/problem/3221
-
 int main() 
 {
     int num;

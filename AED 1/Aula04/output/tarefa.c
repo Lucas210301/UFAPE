@@ -4,6 +4,13 @@
 
 #define MAX_TAREFAS 10
 
+enum Status {
+    PENDENTE,
+    EM_PROGRESSO,
+    CONCLUIDA,
+    CANCELADA
+};
+
 typedef struct {
     int id;
     char descricao[50];
@@ -17,39 +24,19 @@ typedef struct {
     int capacidade;
 } ListaTarefas;
 
-// Função auxiliar para obter o significado do status
 const char* getStatusString(int status) {
     switch (status) {
-        case 0:
+        case PENDENTE:
             return "Pendente";
-        case 1:
+        case EM_PROGRESSO:
             return "Em Progresso";
-        case 2:
+        case CONCLUIDA:
             return "Concluída";
-        case 3:
+        case CANCELADA:
             return "Cancelada";
         default:
             return "Desconhecido";
     }
-}
-
-// Função auxiliar para decodificar caracteres UTF-8
-int utf8_decode(const char *s, unsigned *val) {
-    unsigned c = (unsigned char)s[0];
-    if (c < 0x80) {
-        *val = c;
-        return 1;
-    } else if ((c & 0xE0) == 0xC0) {
-        *val = c & 0x1F;
-        return 2;
-    } else if ((c & 0xF0) == 0xE0) {
-        *val = c & 0x0F;
-        return 3;
-    } else if ((c & 0xF8) == 0xF0) {
-        *val = c & 0x07;
-        return 4;
-    }
-    return -1;
 }
 
 void inicializarLista(ListaTarefas *lista) {
@@ -120,7 +107,7 @@ void listarTarefas(ListaTarefas lista) {
     } else {
         printf("Lista de Tarefas:\n");
         for (int i = 0; i < lista.quantidade; i++) {
-            printf("ID: %d\tDescricao: %s\tStatus: %d (%s)\tPrazo: %s\n",
+            printf("ID: %d\tDescricao: %-50s\tStatus: %d (%s)\tPrazo: %s\n",
                    lista.tarefas[i].id,
                    lista.tarefas[i].descricao,
                    lista.tarefas[i].status,
@@ -215,7 +202,7 @@ void carregarDeArquivo(ListaTarefas *lista) {
 
     Tarefa tarefa;
 
-    while (fscanf(arquivo, "%d;%49[^;];%d;%10s\n", &tarefa.id, tarefa.descricao, &tarefa.status, tarefa.prazo) == 4) {
+    while (fscanf(arquivo, "%d;%49[^;];%d;%10s\n", &tarefa.id, tarefa.descricao, &        tarefa.status, tarefa.prazo) == 4) {
         inserirFim(lista, tarefa);
     }
 
@@ -267,12 +254,13 @@ int main() {
 
         switch (opcao) {
             case 1:
-                // Implemente a leitura da tarefa e chame a função de inserção no início
                 printf("Informe os dados da tarefa:\n");
                 printf("ID: ");
                 scanf("%d", &tarefa.id);
                 printf("Descricao: ");
-                scanf("%49s", tarefa.descricao);
+                getchar(); // Consumir a quebra de linha pendente do buffer
+                fgets(tarefa.descricao, sizeof(tarefa.descricao), stdin);
+                tarefa.descricao[strcspn(tarefa.descricao, "\n")] = '\0'; // Remover o caractere de nova linha
                 printf("Status (0 - pendente, 1 - em progresso, 2 - concluida, 3 - cancelada): ");
                 scanf("%d", &tarefa.status);
                 printf("Prazo (DD-MM-AAAA): ");
@@ -280,12 +268,13 @@ int main() {
                 inserirInicio(&lista, tarefa);
                 break;
             case 2:
-                // Implemente a leitura da tarefa e chame a função de inserção no fim
                 printf("Informe os dados da tarefa:\n");
                 printf("ID: ");
                 scanf("%d", &tarefa.id);
+                getchar(); // Consumir a quebra de linha pendente do buffer
                 printf("Descricao: ");
-                scanf("%49s", tarefa.descricao);
+                fgets(tarefa.descricao, sizeof(tarefa.descricao), stdin);
+                tarefa.descricao[strcspn(tarefa.descricao, "\n")] = '\0'; // Remover o caractere de nova linha
                 printf("Status (0 - pendente, 1 - em progresso, 2 - concluida, 3 - cancelada): ");
                 scanf("%d", &tarefa.status);
                 printf("Prazo (DD-MM-AAAA): ");
@@ -293,12 +282,13 @@ int main() {
                 inserirFim(&lista, tarefa);
                 break;
             case 3:
-                // Implemente a leitura da tarefa, posição e chame a função de inserção em posição específica
                 printf("Informe os dados da tarefa:\n");
                 printf("ID: ");
                 scanf("%d", &tarefa.id);
+                getchar(); // Consumir a quebra de linha pendente do buffer
                 printf("Descricao: ");
-                scanf("%49s", tarefa.descricao);
+                fgets(tarefa.descricao, sizeof(tarefa.descricao), stdin);
+                tarefa.descricao[strcspn(tarefa.descricao, "\n")] = '\0'; // Remover o caractere de nova linha
                 printf("Status (0 - pendente, 1 - em progresso, 2 - concluida, 3 - cancelada): ");
                 scanf("%d", &tarefa.status);
                 printf("Prazo (DD-MM-AAAA): ");
@@ -308,23 +298,19 @@ int main() {
                 inserirPosicao(&lista, tarefa, pos);
                 break;
             case 4:
-                // Lista as tarefas
                 listarTarefas(lista);
                 break;
             case 5:
-                // Implemente a leitura da posição e chame a função de remoção por posição
                 printf("Informe a posicao: ");
                 scanf("%d", &pos);
                 removerPosicao(&lista, pos);
                 break;
             case 6:
-                // Implemente a leitura do ID e chame a função de remoção por ID
                 printf("Informe o ID: ");
                 scanf("%d", &id);
                 removerValor(&lista, id);
                 break;
             case 7:
-                // Implemente a leitura do ID e chame a função de procurar por ID
                 printf("Informe o ID: ");
                 scanf("%d", &id);
                 pos = procurar(lista, id);
@@ -335,11 +321,9 @@ int main() {
                 }
                 break;
             case 8:
-                // Mostra o tamanho da lista
                 printf("Tamanho da lista: %d\n", tamanho(lista));
                 break;
             case 9:
-                // Sair e salvar
                 printf("Saindo do sistema...\n");
                 atualizarArquivo(lista);
                 break;
@@ -352,3 +336,4 @@ int main() {
 
     return 0;
 }
+

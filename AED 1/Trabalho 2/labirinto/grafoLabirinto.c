@@ -134,55 +134,64 @@ void breadthFirstSearch(Graph* grafoLabirinto, int start, int* visited) {
 }
 
 int main() {
+    int escolha;
+    printf("Escolha o labirinto (1 a 4): ");
+    scanf("%d", &escolha);
+
+    if (escolha < 1 || escolha > 4) {
+        printf("Escolha inválida.\n");
+        return 1;
+    }
+
     // Leitura do labirinto de um arquivo
     char* filenames[] = {"l1.txt", "l2.txt", "l3.txt", "l4.txt"};
     int numRows[] = {20, 40, 80, 150};
     int numCols[] = {20, 40, 80, 150};
 
-    for (int k = 0; k < 4; ++k) {
-        char** maze = (char**)malloc(numRows[k] * sizeof(char*));
-        for (int i = 0; i < numRows[k]; ++i) {
-            maze[i] = (char*)malloc(numCols[k] * sizeof(char));
-        }
+    escolha--;
 
-        readMazeFromFile(filenames[k], maze, numRows[k], numCols[k]);
-
-        // Criar e inicializar o grafo
-        Graph* grafoLabirinto = createGraph(numRows[k] * numCols[k] + 1); // +1 para o vértice de saída
-
-        // Adicionar arestas ao grafo com base no labirinto
-        addEdgesFromMaze(grafoLabirinto, maze, numRows[k], numCols[k]);
-
-        // Imprimir o grafo
-        printf("\nGrafo para labirinto %s:\n", filenames[k]);
-        printGraph(grafoLabirinto);
-
-        // Inicializar vetor de visitados
-        int visited[numRows[k] * numCols[k] + 1];
-        for (int i = 0; i < numRows[k] * numCols[k] + 1; ++i) {
-            visited[i] = 0;
-        }
-
-        printf("\nDFS para labirinto %s: ", filenames[k]);
-        depthFirstSearch(grafoLabirinto, 0, visited);
-
-        // Reinicializar vetor de visitados
-        for (int i = 0; i < numRows[k] * numCols[k] + 1; ++i) {
-            visited[i] = 0;
-        }
-
-        printf("\nBFS para labirinto %s: ", filenames[k]);
-        breadthFirstSearch(grafoLabirinto, 0, visited);
-
-        // Liberar memória
-        for (int i = 0; i < numRows[k]; ++i) {
-            free(maze[i]);
-        }
-        free(maze);
-
-        free(grafoLabirinto->adjacencyList);
-        free(grafoLabirinto);
+    char** maze = (char**)malloc(numRows[escolha] * sizeof(char*));
+    for (int i = 0; i < numRows[escolha]; ++i) {
+        maze[i] = (char*)malloc(numCols[escolha] * sizeof(char));
     }
+
+    readMazeFromFile(filenames[escolha], maze, numRows[escolha], numCols[escolha]);
+
+    // Criar e inicializar o grafo
+    Graph* grafoLabirinto = createGraph(numRows[escolha] * numCols[escolha] + 1); // +1 para o vértice de saída
+
+    // Adicionar arestas ao grafo com base no labirinto
+    addEdgesFromMaze(grafoLabirinto, maze, numRows[escolha], numCols[escolha]);
+
+    // Imprimir o grafo
+    printf("\nGrafo para labirinto %s:\n", filenames[escolha]);
+    printGraph(grafoLabirinto);
+
+    // Inicializar vetor de visitados
+    int visited[numRows[escolha] * numCols[escolha] + 1];
+    for (int i = 0; i < numRows[escolha] * numCols[escolha] + 1; ++i) {
+        visited[i] = 0;
+    }
+
+    printf("\nDFS para labirinto %s: ", filenames[escolha]);
+    depthFirstSearch(grafoLabirinto, 0, visited);
+
+    // Reinicializar vetor de visitados
+    for (int i = 0; i < numRows[escolha] * numCols[escolha] + 1; ++i) {
+        visited[i] = 0;
+    }
+
+    printf("\nBFS para labirinto %s: ", filenames[escolha]);
+    breadthFirstSearch(grafoLabirinto, 0, visited);
+
+    // Liberar memória
+    for (int i = 0; i < numRows[escolha]; ++i) {
+        free(maze[i]);
+    }
+    free(maze);
+
+    free(grafoLabirinto->adjacencyList);
+    free(grafoLabirinto);
 
     return 0;
 }
